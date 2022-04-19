@@ -29,7 +29,7 @@ while wait(2) do
                 local ohString1 = obj.Name
     
                 game:GetService("ReplicatedStorage").Knit.Services.WorldCurrencyService.RE.PickupCurrency:FireServer(ohString1)
-                obj:Destroy()
+                --obj:Destroy()
             end)()
         end
     end
