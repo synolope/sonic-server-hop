@@ -22,12 +22,15 @@ game.RunService.Heartbeat:Connect(function()
     end)()
     end)
 
-for _,obj in pairs(workspace.Map.Objects:GetChildren()) do
-	if obj.ClassName == "Model" then
-		coroutine.wrap(function()
-			local ohString1 = obj.Name
-
-			game:GetService("ReplicatedStorage").Knit.Services.WorldCurrencyService.RE.PickupCurrency:FireServer(ohString1)
-		end)()
-	end
+while wait(2) do
+    for _,obj in pairs(workspace.Map.Objects:GetChildren()) do
+        if obj.ClassName == "Model" then
+            coroutine.wrap(function()
+                local ohString1 = obj.Name
+    
+                game:GetService("ReplicatedStorage").Knit.Services.WorldCurrencyService.RE.PickupCurrency:FireServer(ohString1)
+                obj:Destroy()
+            end)()
+        end
+    end
 end
